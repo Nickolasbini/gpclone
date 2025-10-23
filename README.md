@@ -55,7 +55,9 @@ OPENROUTER_API_KEY="SUA_CHAVE_AQUI"
 Execute o script server.js (o seu backend) com o Node.js:
 Bash
 
+```bash
 node server.js
+```
 
 Se tudo estiver correto, você verá a mensagem: 🚀 Servidor rodando em http://localhost:3000
 
