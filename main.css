@@ -1,0 +1,20 @@
+@keyframes blink {
+    50% {opacity: 0;}
+}
+
+.typing::after {
+    animation: blink 1s step-start infinite;
+    display: inline-block;
+    margin-left: 2px
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.user-balloon {
+    border-radius: 10px 0px 10px 10px;
+}

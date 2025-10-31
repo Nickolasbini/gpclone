@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Clone</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 h-screen overflow-hidden flex">
+    <div id="sidebar" class="bg-gray-900 text-white w-64 p-2 flex flex-col h-full hidden md:flex">
+        <a class="flex items-center justify-between p-3 my-2 text-sm font-medium rounded-lg transition cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </a>
+        <button id="newChat" class="flex items-center justify-between p-3 my-2 text-sm font-medium bg-gray-800 hover:bg-gray-700 rounded-lg transition">
+            <span class="truncate hide-on-small">Nova Chat</span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </span>
+        </button>
+
+        <div id="historyWrapper" class="flex-1 overflow-y-auto no-srollbar space-y-1 text-sm pt-2"></div>
+
+        <div class="border-t botder-gray-700 mt-auto pt-2 space-y-5 text-sm">
+            <a id="accountButton" class="flex items-center p-2 rounded-lg hover:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                <span class="hide-on-small ml-2">
+                    John Black
+                </span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="flex-1 flex flex-col h-full relative">
+        <div id="chatWindow" class="flex-1 overflow-y-auto p-4 md:p-6 no-srollbar">
+
+            <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+
+                    <form id="chatForm" class="flex items-end rounded-xl shadow-lg border border-gray-300 dark:border-gray-600 overflow-hidden">
+
+                        <textarea
+                            id="userInput"
+                            rows="1"
+                            placeholder="Mensagem para o GTClone..."
+                            class="flex-1 resize-none p-3 bg-transparent focus:outline-none placeholder-gray-500 dark:placeholder-gray-400 max-h-40"
+                            required
+                        ></textarea>
+
+                        <button 
+                            type="submit" 
+                            id="sendButton"
+                            class="p-3 m-2 rounded-lg bg-green-500 text-white hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+
+                    <p class="text-xs text-center text-gray-400 mt-2">
+                        GTClone | Desenvolvido por Cervo Digital.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
