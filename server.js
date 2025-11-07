@@ -18,7 +18,7 @@ app.post('/chat-completion', async (req, res) => {
         return res.status(400).json({ error: 'O histórico da conversa é obrigatório.' });
     }
     
-    const AI_MODEL = 'openrouter/andromeda-alpha'; 
+    const AI_MODEL = 'openrouter/polaris-alpha'; 
 
     try {
         const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
