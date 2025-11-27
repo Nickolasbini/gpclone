@@ -2,13 +2,23 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { default: fetch } = require('node-fetch');
+const User = require('./source/models/User');
 
 const app = express();
 app.use(cors()); 
 app.use(express.json()); 
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hello to GT Clone API' }) 
+app.get('/', async (req, res) => {
+    const email = req.query.email ?? null;
+
+    const result = await User.saveUser(email, 'api', '12345', 2);
+
+    // const result = await User.getByEmail('test@email.com');
+
+    res.status(200).json({ 
+        message: 'Hello to GT Clone API',
+        data: result
+    }) 
 });
 
 app.post('/chat-completion', async (req, res) => {
